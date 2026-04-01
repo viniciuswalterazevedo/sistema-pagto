@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberacao de Acesso</title>
+    <link rel="stylesheet" href="/home/home.css">
+</head>
+<body>
+    <main class="layout">
+        <section class="brand-panel">
+            <div class="brand-mark">
+                <span class="brand-pill">PIX ACCESS</span>
+                <span class="brand-signal"></span>
+            </div>
+
+            <div class="brand-copy">
+                <p class="overline">Liberacao instantanea</p>
+                <h1>Bem-Vinod</h1>
+                <p class="lead">
+                    Gere o pagamento, acompanhe a aprovacao em tempo real e conclua tudo
+                    em uma tela com hierarquia forte e cara de produto final.
+                </p>
+            </div>
+
+            <div class="feature-list">
+                <article class="feature-card">
+                    <span class="feature-index">01</span>
+                    <div>
+                        <h3>Geracao imediata</h3>
+                        <p>Um clique para emitir o PIX e preparar o QR Code sem sair da tela.</p>
+                    </div>
+                </article>
+
+                <article class="feature-card">
+                    <span class="feature-index">02</span>
+                    <div>
+                        <h3>Status ao vivo</h3>
+                        <p>A validacao acompanha o pagamento e atualiza o retorno sem confundir o usuario.</p>
+                    </div>
+                </article>
+
+                <article class="feature-card">
+                    <span class="feature-index">03</span>
+                    <div>
+                        <h3>Checkout limpo</h3>
+                        <p>E-mail, QR e codigo PIX organizados em um fluxo simples, direto e legivel.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="checkout-panel">
+            <div class="panel-top">
+                <div>
+                    <p class="panel-kicker">Checkout</p>
+                    <h2>Ativar acesso</h2>
+                </div>
+
+                <div class="price-chip">
+                    <span>Valor</span>
+                    <strong>R$ 0,20</strong>
+                </div>
+            </div>
+
+            <div class="status-strip">
+                <span class="strip-item strip-item-live">validacao automatica</span>
+                <span class="strip-item">retorno em tempo real</span>
+            </div>
+
+            <p id="informativo" class="feedback-message"></p>
+
+            <label class="field" for="email">
+                <span class="field-label">E-mail para liberar o acesso</span>
+                <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required>
+            </label>
+
+            <button class="btn-gerar-pagto" onclick="gerarPagto()">
+                <span>Gerar pagamento</span>
+                <span class="btn-arrow">-></span>
+            </button>
+
+            <div class="payment-grid">
+                <article class="module module-qr">
+                    <div class="module-head">
+                        <p class="module-title">QR Code PIX</p>
+                        <span class="module-tag">escaneie</span>
+                    </div>
+                    <div id="qrcode" class="qr-stage"></div>
+                </article>
+
+                <div class="module-stack">
+                    <article class="module">
+                        <div class="module-head">
+                            <p class="module-title">Codigo PIX</p>
+                        </div>
+                        <p id="codigo" class="pix-code"></p>
+                    </article>
+
+                    <article class="module">
+                        <div class="module-head">
+                            <p class="module-title">Status do pagamento</p>
+                        </div>
+                        <p id="statusPagto" class="payment-status"></p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="/home/js/geraQrCode.js"></script>
+    <script src="/home/js/validaPagto.js"></script>
+</body>
+</html>
